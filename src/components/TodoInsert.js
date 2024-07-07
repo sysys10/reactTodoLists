@@ -5,8 +5,12 @@ export default function TodoInsert({ todoList, setTodoList, 시간 }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodoList([...todoList, { text: input, time: 시간, done: false }]);
-    setInput("");
+    if (todoList.length > 6) {
+      alert("7개 이상은 ㄴㄴ");
+    } else {
+      setTodoList([...todoList, { text: input, time: 시간, done: false }]);
+      setInput("");
+    }
   };
 
   return (
